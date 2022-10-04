@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import BaseApparel from './components/BaseApparel';
 
 function App() {

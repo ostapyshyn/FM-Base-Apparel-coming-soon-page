@@ -1,9 +1,14 @@
+@import '../../src/index.scss';
+
 section {
   width: 100%;
 
   display: flex;
+  border: 1px solid red;
 
-  align-items: center;
+  @include mq(1111px) {
+    flex-direction: column;
+  }
 
   picture {
     max-width: 610px;
@@ -11,51 +16,93 @@ section {
 
   article {
     width: 100%;
+    background-image: url(./svg/bg-pattern-desktop.svg);
+    background-size: cover;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
     max-width: 445px;
     margin-right: 220px;
     margin-left: 165px;
+    margin-top: 64.91px;
+
+    @include mq(1350px) {
+      margin-top: 0;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
 
     svg {
       margin-bottom: 136.09px;
-    }
-
-    input {
-      padding-top: 15px;
-      padding-left: 32px;
-      padding-bottom: 13px;
-      mix-blend-mode: normal;
-      opacity: 0.5;
-      border: 1px solid var(--desaturated-red);
-      border-radius: 28px;
-
-      &::placeholder {
-        font-family: 'Josefin Sans';
-
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 28px;
-        color: var(--desaturated-red);
-        mix-blend-mode: normal;
-        opacity: 0.5;
+      @include mq(1350px) {
+        margin-bottom: 32px;
       }
     }
-    button {
-      background: linear-gradient(135deg, #f8bfbf 0%, #ee8b8b 100%);
-      box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
-      border-radius: 28px;
-      width: 100px;
-      height: 56px;
-      border: none;
+
+    .input_field {
       position: relative;
+
       svg {
         position: absolute;
-        top: 20px;
-        left: 42px;
+        margin-bottom: 0px;
+        right: 119px;
+        top: 16px;
       }
+
+      input {
+        padding-top: 20px;
+        padding-left: 32px;
+        padding-bottom: 19px;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+        border: 1px solid var(--desaturated-red);
+        border-radius: 28px;
+        width: 100%;
+        margin-bottom: 11px;
+
+        &::placeholder {
+          font-family: 'Josefin Sans';
+
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 28px;
+          color: var(--desaturated-red);
+          mix-blend-mode: normal;
+          opacity: 0.5;
+        }
+      }
+
+      button {
+        background: linear-gradient(135deg, #f8bfbf 0%, #ee8b8b 100%);
+        box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+        border-radius: 28px;
+        width: 100px;
+        height: 56px;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 0px;
+        cursor: pointer;
+        &:active {
+          transform: scale(0.98);
+          background: linear-gradient(135deg, #f8bfbf 100%, #ee8b8b 50%);
+        }
+        svg {
+          position: absolute;
+          top: 19px;
+          left: 47px;
+        }
+      }
+    }
+
+    .error {
+      font-family: 'Josefin Sans';
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--soft-red);
+      margin-left: 32px;
+      margin-bottom: 0;
     }
 
     h2 {
