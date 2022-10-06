@@ -53,6 +53,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
+  @include mq(600px) {
+    padding-inline: 32px;
+  }
 }
 
 code {

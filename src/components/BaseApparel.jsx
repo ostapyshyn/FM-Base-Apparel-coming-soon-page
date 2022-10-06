@@ -29,7 +29,9 @@ function BaseApparel() {
 
   const extraStyles = {
     border: '2px solid var(--soft-red)',
+    boxSizing: 'border-box',
     opacity: '1',
+    paddingBottom: '24px',
   };
 
   return (
@@ -37,6 +39,7 @@ function BaseApparel() {
       <div className={styles.left}>
         <article>
           <Logo className={styles.logo} />
+          <img src={hero_mobile} alt="person" className={styles.image_mobile} />
           <h2>
             <span>WE'RE </span>COMING SOON
           </h2>
@@ -65,8 +68,8 @@ function BaseApparel() {
       </div>
 
       <picture>
-        <source media="(min-width: 645px)" srcSet={hero_desktop} />
-        <img src={hero_mobile} alt="parfume" />
+        <source media="(min-width: 900px)" srcSet={hero_desktop} />
+        <img src={hero_mobile} alt="person" />
       </picture>
     </section>
   );

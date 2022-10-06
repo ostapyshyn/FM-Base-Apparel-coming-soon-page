@@ -13,10 +13,23 @@ section {
   .logo {
     width: 158px;
     margin-bottom: 136.09px;
-    @include mq(600px) {
+
+    @include mq(900px) {
       margin-bottom: 32px;
       width: 100px;
       order: 1;
+    }
+  }
+
+  .image_mobile {
+    margin-bottom: 64px;
+    width: 100%;
+    display: none;
+    @include mq(900px) {
+      display: block;
+    }
+    @include mq(509px) {
+      display: block;
     }
   }
 
@@ -28,22 +41,29 @@ section {
       object-fit: cover;
       object-position: top;
     }
-    @include mq(600px) {
-      order: 2;
-      margin-bottom: 64px;
-      margin-right: -32px;
-      margin-left: -32px;
+    @include mq(900px) {
+      display: none;
     }
   }
 
   .left {
     width: 58%;
 
+    @include mq(900px) {
+      width: auto;
+    }
+
     article {
       max-width: 445px;
       margin: 0 auto;
       margin-top: 64.91px;
       transform: translateX(-24px);
+
+      @include mq(900px) {
+        margin-top: 32px;
+        margin-bottom: 32px;
+        transform: translateX(0);
+      }
 
       .input_field {
         position: relative;
@@ -133,6 +153,9 @@ section {
       }
 
       h2 {
+        @include mq(900px) {
+          text-align: center;
+        }
         span {
           font-family: 'Josefin Sans';
           font-weight: 300;
@@ -170,6 +193,9 @@ section {
       }
 
       p {
+        @include mq(900px) {
+          text-align: center;
+        }
         font-family: 'Josefin Sans';
         font-weight: 400;
         font-size: 16px;
