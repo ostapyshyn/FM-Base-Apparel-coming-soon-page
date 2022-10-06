@@ -2,135 +2,189 @@
 
 section {
   width: 100%;
+  min-height: 100vh;
 
   display: flex;
-  border: 1px solid red;
 
-  @include mq(1111px) {
+  @include mq(900px) {
     flex-direction: column;
   }
 
-  picture {
-    max-width: 610px;
+  .logo {
+    width: 158px;
+    margin-bottom: 136.09px;
+    @include mq(600px) {
+      margin-bottom: 32px;
+      width: 100px;
+      order: 1;
+    }
   }
 
-  article {
-    width: 100%;
-    background-image: url(./svg/bg-pattern-desktop.svg);
-    background-size: cover;
-
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    max-width: 445px;
-    margin-right: 220px;
-    margin-left: 165px;
-    margin-top: 64.91px;
-
-    @include mq(1350px) {
-      margin-top: 0;
-      margin-right: 0px;
-      margin-left: 0px;
+  picture {
+    width: 42%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
-
-    svg {
-      margin-bottom: 136.09px;
-      @include mq(1350px) {
-        margin-bottom: 32px;
-      }
+    @include mq(600px) {
+      order: 2;
+      margin-bottom: 64px;
+      margin-right: -32px;
+      margin-left: -32px;
     }
+  }
 
-    .input_field {
-      position: relative;
+  .left {
+    width: 58%;
 
-      svg {
-        position: absolute;
-        margin-bottom: 0px;
-        right: 119px;
-        top: 16px;
-      }
+    article {
+      max-width: 445px;
+      margin: 0 auto;
+      margin-top: 64.91px;
+      transform: translateX(-24px);
 
-      input {
-        padding-top: 20px;
-        padding-left: 32px;
-        padding-bottom: 19px;
-        mix-blend-mode: normal;
-        opacity: 0.5;
-        border: 1px solid var(--desaturated-red);
-        border-radius: 28px;
-        width: 100%;
-        margin-bottom: 11px;
+      .input_field {
+        position: relative;
 
-        &::placeholder {
-          font-family: 'Josefin Sans';
-
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 28px;
-          color: var(--desaturated-red);
-          mix-blend-mode: normal;
-          opacity: 0.5;
-        }
-      }
-
-      button {
-        background: linear-gradient(135deg, #f8bfbf 0%, #ee8b8b 100%);
-        box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
-        border-radius: 28px;
-        width: 100px;
-        height: 56px;
-        border: none;
-        position: absolute;
-        right: 0;
-        top: 0px;
-        cursor: pointer;
-        &:active {
-          transform: scale(0.98);
-          background: linear-gradient(135deg, #f8bfbf 100%, #ee8b8b 50%);
-        }
         svg {
           position: absolute;
-          top: 19px;
-          left: 47px;
+          margin-bottom: 0px;
+          right: 76px;
+          top: 13px;
+        }
+
+        input {
+          padding-top: 28px;
+          padding-left: 32px;
+          padding-bottom: 26px;
+          mix-blend-mode: normal;
+          opacity: 0.5;
+          background: transparent;
+          border: 1px solid var(--desaturated-red);
+          border-radius: 28px;
+          width: 98%;
+          height: 48px;
+          color: var(--dark-grayish-red);
+          margin-bottom: 11px;
+          padding-right: 11px;
+          box-sizing: border-box;
+
+          &:focus {
+            opacity: 1;
+          }
+
+          &::placeholder {
+            font-family: 'Josefin Sans';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            color: var(--desaturated-red);
+            mix-blend-mode: normal;
+          }
+          @include mq(600px) {
+            padding-top: 16px;
+            padding-left: 32px;
+            padding-bottom: 15px;
+          }
+        }
+
+        .error {
+          font-family: 'Josefin Sans';
+          font-weight: 400;
+          font-size: 13px;
+          color: var(--soft-red);
+          margin-left: 32px;
+          margin-bottom: 0;
+          @include mq(600px) {
+            text-align: left;
+          }
+        }
+
+        button {
+          background: linear-gradient(135deg, #f8bfbf 0%, #ee8b8b 100%);
+          box-shadow: 0px 15px 20px rgba(198, 110, 110, 0.247569);
+          border-radius: 28px;
+          width: 100px;
+          height: 56px;
+          border: none;
+          position: absolute;
+          right: 0;
+          top: 0px;
+          cursor: pointer;
+          &:active {
+            transform: scale(0.98);
+            background: linear-gradient(135deg, #f8bfbf 100%, #ee8b8b 50%);
+          }
+          svg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          @include mq(600px) {
+            width: 64px;
+            height: 48px;
+          }
         }
       }
-    }
 
-    .error {
-      font-family: 'Josefin Sans';
-      font-weight: 400;
-      font-size: 13px;
-      color: var(--soft-red);
-      margin-left: 32px;
-      margin-bottom: 0;
-    }
+      h2 {
+        span {
+          font-family: 'Josefin Sans';
+          font-weight: 300;
+          font-size: 64px;
+          line-height: 64px;
+          letter-spacing: 17.3206px;
+          color: var(--desaturated-red);
 
-    h2 {
-      span {
+          @include mq(600px) {
+            font-family: 'Josefin Sans';
+            font-size: 40px;
+            line-height: 42px;
+            text-align: center;
+            letter-spacing: 10.8254px;
+          }
+        }
         font-family: 'Josefin Sans';
-        font-weight: 300;
+
+        font-weight: 600;
         font-size: 64px;
-        line-height: 64px;
+        line-height: 71px;
         letter-spacing: 17.3206px;
-        color: var(--desaturated-red);
+        color: var(--dark-grayish-red);
+        margin-bottom: 32px;
+
+        @include mq(600px) {
+          font-family: 'Josefin Sans';
+          font-weight: 600;
+          font-size: 40px;
+          line-height: 42px;
+          text-align: center;
+          letter-spacing: 10.8254px;
+          margin-bottom: 16px;
+        }
       }
-      font-family: 'Josefin Sans';
 
-      font-weight: 600;
-      font-size: 64px;
-      line-height: 71px;
-      letter-spacing: 17.3206px;
-      color: var(--dark-grayish-red);
-      margin-bottom: 32px;
-    }
-
-    p {
-      font-family: 'Josefin Sans';
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 28px;
-      color: var(--desaturated-red);
-      margin-bottom: 40px;
+      p {
+        font-family: 'Josefin Sans';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        color: var(--desaturated-red);
+        margin-bottom: 40px;
+        @include mq(600px) {
+          font-size: 14px;
+          line-height: 22px;
+          text-align: center;
+        }
+      }
+      @include mq(600px) {
+        order: 3;
+      }
     }
   }
 }

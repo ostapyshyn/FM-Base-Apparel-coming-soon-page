@@ -25,7 +25,6 @@ video,
 canvas,
 svg {
   display: block;
-  max-width: 100%;
 }
 
 p,
@@ -53,10 +52,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @include mq(1350px) {
-    padding-block: 32px;
-    padding-inline: 32px;
-  }
+  background: linear-gradient(150.03deg, #ffffff 0%, #fff4f4 84.51%);
 }
 
 code {

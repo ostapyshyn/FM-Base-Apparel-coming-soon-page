@@ -27,33 +27,42 @@ function BaseApparel() {
     }
   };
 
+  const extraStyles = {
+    border: '2px solid var(--soft-red)',
+    opacity: '1',
+  };
+
   return (
     <section>
-      <article>
-        <Logo />
-        <h2>
-          <span>WE'RE </span>COMING SOON
-        </h2>
-        <p>
-          Hello fellow shoppers! We're currently building our new fashion store. Add your email
-          below to stay up-to-date with announcements and our launch deals.
-        </p>
-        <div className={styles.input_field}>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={handleOnChange}
-            placeholder="Email Address"
-          />
-          {message && <Error />}
-          <p className={styles.error}>{message}</p>
+      <div className={styles.left}>
+        <article>
+          <Logo className={styles.logo} />
+          <h2>
+            <span>WE'RE </span>COMING SOON
+          </h2>
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion store. Add your email
+            below to stay up-to-date with announcements and our launch deals.
+          </p>
+          <div className={styles.input_field}>
+            <input
+              id="email"
+              autoComplete="off"
+              type="email"
+              value={email}
+              onChange={handleOnChange}
+              placeholder="Email Address"
+              style={message ? extraStyles : null}
+            />
+            {message && <Error />}
+            <p className={styles.error}>{message}</p>
 
-          <button onClick={emailValidation}>
-            <Arrow />
-          </button>
-        </div>
-      </article>
+            <button onClick={emailValidation}>
+              <Arrow />
+            </button>
+          </div>
+        </article>
+      </div>
 
       <picture>
         <source media="(min-width: 645px)" srcSet={hero_desktop} />
