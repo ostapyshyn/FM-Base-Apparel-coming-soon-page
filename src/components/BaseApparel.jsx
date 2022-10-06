@@ -39,7 +39,11 @@ function BaseApparel() {
       <div className={styles.left}>
         <article>
           <Logo className={styles.logo} />
-          <img src={hero_mobile} alt="person" className={styles.image_mobile} />
+
+          <div className={styles.image_mobile}>
+            <img src={hero_mobile} alt="person" />
+          </div>
+
           <h2>
             <span>WE'RE </span>COMING SOON
           </h2>
