@@ -54,9 +54,13 @@ section {
 
   .left {
     width: 58%;
+    background-image: url(../assets/svg/bg-pattern-desktop.svg);
+    background-position: center center;
+    background-size: cover;
 
     @include mq(900px) {
       width: auto;
+      background-image: none;
     }
 
     article {
@@ -77,8 +81,13 @@ section {
         svg {
           position: absolute;
           margin-bottom: 0px;
-          right: 76px;
-          top: 13px;
+          right: 114px;
+          top: 17px;
+
+          @include mq(600px) {
+            right: 76px;
+            top: 13px;
+          }
         }
 
         input {
