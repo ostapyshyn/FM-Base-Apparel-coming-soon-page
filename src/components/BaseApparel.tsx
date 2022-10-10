@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import styles from '../assets/baseApparel.module.scss';
 
 import { ReactComponent as Logo } from '../assets/svg/logo.svg';
+
 import { ReactComponent as Arrow } from '../assets/svg/icon-arrow.svg';
+
 import { ReactComponent as Error } from '../assets/svg/icon-error.svg';
+
 import hero_desktop from '../assets/hero-desktop.jpg';
 import hero_mobile from '../assets/hero-mobile.jpg';
 
 function BaseApparel() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>();
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: any) => {
     setEmail(e.target.value);
   };
 
@@ -39,7 +42,7 @@ function BaseApparel() {
       <div className={styles.left}>
         <article>
           <Logo className={styles.logo} />
-
+          {/* <img src={logo} alt="car" className={styles.logo} /> */}
           <div className={styles.image_mobile}>
             <img src={hero_mobile} alt="person" />
           </div>
@@ -59,13 +62,23 @@ function BaseApparel() {
               value={email}
               onChange={handleOnChange}
               placeholder="Email Address"
-              style={message ? extraStyles : null}
+              style={
+                message
+                  ? {
+                      border: '2px solid var(--soft-red)',
+                      boxSizing: 'border-box',
+                      opacity: '1',
+                      paddingBottom: '24px',
+                    }
+                  : undefined
+              }
             />
             {message && <Error />}
             <p className={styles.error}>{message}</p>
 
             <button onClick={emailValidation}>
               <Arrow />
+              {/* <img src={arrow} alt="arrow" /> */}
             </button>
           </div>
         </article>
