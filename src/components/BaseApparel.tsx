@@ -14,7 +14,7 @@ function BaseApparel() {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>();
 
-  const handleOnChange = (e: any) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
 
@@ -42,7 +42,6 @@ function BaseApparel() {
       <div className={styles.left}>
         <article>
           <Logo className={styles.logo} />
-          {/* <img src={logo} alt="car" className={styles.logo} /> */}
           <div className={styles.image_mobile}>
             <img src={hero_mobile} alt="person" />
           </div>
@@ -78,7 +77,6 @@ function BaseApparel() {
 
             <button onClick={emailValidation}>
               <Arrow />
-              {/* <img src={arrow} alt="arrow" /> */}
             </button>
           </div>
         </article>
